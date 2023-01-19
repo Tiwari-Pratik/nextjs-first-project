@@ -1,4 +1,5 @@
 import EventList from "../../components/events/EventList";
+import Head from "next/head";
 // import { getAllEvents } from "../../dummy-data";
 import { Fragment } from "react";
 import EventsSearch from "../../components/events/EventsSearch";
@@ -12,6 +13,13 @@ const AllEventsPage = (props) => {
   };
   return (
     <Fragment>
+      <Head>
+        <title>All Events</title>
+        <meta
+          name="description"
+          content="Find a lot of great events to evolve..."
+        />
+      </Head>
       <EventsSearch onSearch={searchFilteredEvents} />
       <EventList items={props.data} />
     </Fragment>
